@@ -1,0 +1,13 @@
+Testsuite: com.tronic.gimnasioapp.UsuarioTests
+Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 0.077 sec
+------------- Standard Output ---------------
+--Output from testUser--
+--Output from testPassword--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testUser--
+--Output from testPassword--
+------------- ---------------- ---------------
+
+Testcase: testUser took 0.055 sec
+Testcase: testPassword took 0.007 sec

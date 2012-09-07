@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="MIGUEL-PC" id="0" name="UsuarioTests" package="com.tronic.gimnasioapp" tests="2" time="0.077" timestamp="2012-09-05T15:46:50">
+      <properties />
+
+      <testcase classname="com.tronic.gimnasioapp.UsuarioTests" name="testUser" time="0.055" />
+
+      <testcase classname="com.tronic.gimnasioapp.UsuarioTests" name="testPassword" time="0.007" />
+
+      <system-out><![CDATA[--Output from testUser--
+--Output from testPassword--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testUser--
+--Output from testPassword--
+]]></system-err>
+
+  </testsuite>
+</testsuites>

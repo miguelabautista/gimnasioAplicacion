@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="griffon-1.0.2" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library name="Griffon:lib-fixes (gimnasioAplicacion-griffonPluginFixes)">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.groovyfx/groovyfx/jars/groovyfx-0.2.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/asm/asm/jars/asm-3.3.1.jar!/" />
+          <root url="jar://$USER_HOME$/.ivy2/cache/org.codehaus.griffon.plugins/griffon-javafx-runtime/jars/griffon-javafx-runtime-0.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/.griffon/1.0.2/projects/gimnasioAplicacion/plugins/javafx-0.6.1/dist/griffon-javafx-0.6.1-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.griffon/1.0.2/projects/gimnasioAplicacion/plugins/javafx-0.6.1/dist/griffon-javafx-0.6.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
