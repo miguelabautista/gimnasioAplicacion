@@ -1,0 +1,32 @@
+.root {
+    -fx-font-family: "System";
+    -fx-base: #8F8F94;
+    -fx-background: #F0F0F0;
+    -fx-control-inner-background: white;
+    -fx-inner-border: linear-gradient(to bottom, derive(-fx-color,73.6%) 0%, derive(-fx-color,29.200000000000003%) 100%);
+    -fx-body-color: linear-gradient( to bottom, derive(-fx-color, 34.0%) 0%, derive(-fx-color, -18.0%) 100%);
+}
+
+.button:hover{
+   -fx-background-insets: -1.4, 0, 1, 2;
+}
+
+#salirButton:hover{
+   -fx-graphic: url("icons/menu/search-clear-over.png");
+}
+
+#minimizeButton:hover{
+    -fx-graphic: url("icons/menu/window-min-over.png");
+}
+
+#minimizeButton{
+    -fx-graphic: url("icons/menu/window-min.png");
+}
+
+#salirButton{
+   -fx-graphic: url("icons/menu/search-clear.png");
+}
+
+#salirButton:pressed{
+ -fx-border-color:black;
+}

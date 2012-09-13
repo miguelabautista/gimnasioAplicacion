@@ -112,6 +112,10 @@ class GimnasioAplicacionController {
 
                     app.windowManager.hide(view.authStage)
                     app.windowManager.show(pantalla)
+
+                    view.aceptarButton.setDisable(false)
+                    view.userField.text = ""
+                    view.passwordField.text = ""
                 }
             }
         }
