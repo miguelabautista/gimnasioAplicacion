@@ -9,6 +9,34 @@ application {
     //frameClass = 'javax.swing.JFrame'
 }
 mvcGroups {
+    // MVC Group for "instructoresPanel"
+    'instructoresPanel' {
+        model      = 'com.tronic.gimnasioapp.InstructoresPanelModel'
+        view       = 'com.tronic.gimnasioapp.InstructoresPanelView'
+        controller = 'com.tronic.gimnasioapp.InstructoresPanelController'
+    }
+
+    // MVC Group for "avisoCliente"
+    'avisoCliente' {
+        model      = 'com.tronic.gimnasioapp.AvisoClienteModel'
+        view       = 'com.tronic.gimnasioapp.AvisoClienteView'
+        controller = 'com.tronic.gimnasioapp.AvisoClienteController'
+    }
+
+    // MVC Group for "usuario"
+    'usuario' {
+        model      = 'com.tronic.gimnasioapp.UsuarioModel'
+        view       = 'com.tronic.gimnasioapp.UsuarioView'
+        controller = 'com.tronic.gimnasioapp.UsuarioController'
+    }
+
+    // MVC Group for "usuariosPanel"
+    'usuariosPanel' {
+        model      = 'com.tronic.gimnasioapp.UsuariosPanelModel'
+        view       = 'com.tronic.gimnasioapp.UsuariosPanelView'
+        controller = 'com.tronic.gimnasioapp.UsuariosPanelController'
+    }
+
     // MVC Group for "exitDialog"
     'exitDialog' {
         model      = 'com.tronic.gimnasioapp.ExitDialogModel'

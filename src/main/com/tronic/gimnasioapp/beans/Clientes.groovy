@@ -14,5 +14,10 @@ class Clientes {
     String cedula
     String nombre
     String apellido
+    String sexo
     String status
+    String email
+    String direccion
+    String telefFijo
+    String telefMovil
 }

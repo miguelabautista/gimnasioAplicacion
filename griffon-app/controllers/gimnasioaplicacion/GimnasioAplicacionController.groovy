@@ -107,7 +107,14 @@ class GimnasioAplicacionController {
                     model.password = ''
                     view.passwordField.requestFocus()
                 } else if (resultadoPassword) {
-                    def mvc = buildMVCGroup("panelPrincipal")
+                    def mvc
+
+                    if(resultadoUser.tipo_de_cuenta.toLowerCase() == "administrador"){
+                        mvc = buildMVCGroup("panelPrincipal",[isAdmin:true])
+                    } else{
+                        mvc = buildMVCGroup("panelPrincipal",[isAdmin:false])
+                    }
+
                     def pantalla = mvc.view.principalStage
 
                     app.windowManager.hide(view.authStage)

@@ -15,6 +15,16 @@ class InscripcionPanelModel {
     @FXBindable boolean telfFijoAvisoVIsible
     @FXBindable boolean emailAvisoVIsible
 
+    @FXBindable boolean aceptarCancelar
+
+    @FXBindable boolean pagarVisible
+
+    @FXBindable boolean modificarVisible
+    @FXBindable boolean inscribirVisible
+    @FXBindable boolean retirarVisible
+
+    boolean inscribir = false
+
     Image caution = new Image(getClass().getResourceAsStream("/caution_biohazard.png"))
 
     ObservableList<Actividades> clasesItems = FXCollections.observableArrayList([])

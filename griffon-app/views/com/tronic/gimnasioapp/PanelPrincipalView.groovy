@@ -16,11 +16,17 @@ principalStage = application(title: 'GimnasioAplicacion', sizeToScene: true, cen
                 hyperlink(id: "salirButton", contentDisplay: "GRAPHIC_ONLY", layoutX: 766.0, layoutY: 6.0, graphic: new ImageView(model.exitIcon), onAction: controller.salir)
                 hbox(id: 'Hbox', alignment: "CENTER", layoutY: 59, spacing: 5.0, prefWidth: 800.0, leftAnchor: 0.0, rightAnchor: 0.0) {
                     toolBar(id: 'tool', cache: true, prefWidth: 1024.0, hgrow: Priority.ALWAYS) {
-                        button(id: "inscribirButton", mnemonicParsing: false, text: "Clientes", onAction: controller.clientes)
+                        button(id: "inscribirButton", mnemonicParsing: false, text: "Clientes", onAction: controller.inscribir)
                         // button(mnemonicParsing: false, text: "Buscar")
                         // button(mnemonicParsing: false, text: "Actualizar")
-                        // button(mnemonicParsing: false, text: "Retirar")
                         button(id: "actividadesButton", mnemonicParsing: false, text: "Actividades", onAction: controller.actividades)
+                        button(mnemonicParsing: false, text: "Admin clientes" , onAction: controller.clientes, visible:bind(model.isAdminProperty))
+                        button(id:'usuariosButton' ,mnemonicParsing: false , text:'Usuarios',graphic:new ImageView(model.userIcon),onAction: controller.usuarios, visible:bind(model.isAdminProperty)){
+                            tooltip(text:'Administrar usuarios')
+                        }
+                        button(id:'instructoresButton' ,mnemonicParsing: false , text:'Instructores',graphic:new ImageView(model.instructorIcon),onAction: controller.instructores, visible:bind(model.isAdminProperty)){
+                            tooltip(text:'Administrar Instructores')
+                        }
                     }
                 }
             }
@@ -32,4 +38,4 @@ principalStage = application(title: 'GimnasioAplicacion', sizeToScene: true, cen
         }
     }
 }
-principalStage.style = "UNDECORATED"
+//principalStage.style = "UNDECORATED"

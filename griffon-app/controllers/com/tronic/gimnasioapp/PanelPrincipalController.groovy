@@ -1,14 +1,15 @@
 package com.tronic.gimnasioapp
 
 import griffon.transform.Threading
-import javafx.scene.input.MouseEvent
 import javafx.event.EventHandler
+import javafx.scene.input.MouseEvent
 
 class PanelPrincipalController {
     def model
     def view
 
     void mvcGroupInit(Map args) {
+
         view.anchor.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -56,7 +57,10 @@ class PanelPrincipalController {
 
     def clientes = { evt = null ->
         view.inscribirButton.disable = true
-        def mvc = buildMVCGroup("clientes")
+        def mvc
+        try {
+            mvc = buildMVCGroup("clientes")
+        } catch (Exception e) {}
         try {
             if (app.views.actividades.view.actividadesPane.isVisible() != null && true) {
                 app.event('closeActividades')
@@ -72,8 +76,8 @@ class PanelPrincipalController {
         view.actividadesButton.disable = true
         def mvc = buildMVCGroup("actividades")
         try {
-            if (app.views.clientes.view.clientesPane.isVisible() != null && true) {
-                app.event('closeClientes')
+            if (app.views.inscripcionPanel.view.inscripcionPantalla.isVisible() != null && true) {
+                app.event('closeInscripcion')
             }
         } catch (Exception e) {}
         def pantalla = mvc.view.actividadesPane
@@ -91,6 +95,16 @@ class PanelPrincipalController {
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     def minimizar = {  evt = null ->
         view.principalStage.setIconified(true)
+    }
+
+    def usuarios = { evt = null ->
+        def mvc = buildMVCGroup('usuariosPanel')
+        mvc.controller.show(view.principalStage)
+    }
+
+    def instructores = { evt = null ->
+        def mvc = buildMVCGroup('instructoresPanel')
+        mvc.controller.show(view.principalStage)
     }
 
 }
