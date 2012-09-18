@@ -8,7 +8,7 @@ environments {
                 // alias = 'development'
                 storepass = 'BadStorePassword'
                 keypass = 'BadKeyPassword'
-                lazy = true // only sign when unsigned
+                lazy = false // only sign when unsigned
             }
         }
     }
@@ -32,8 +32,8 @@ environments {
 
         griffon {
             jars {
-                sign = true
-                pack = true
+                sign = false
+                pack = false
                 destDir = "${basedir}/staging"
             }
             webstart {

@@ -3,7 +3,7 @@ package gimnasioaplicacion
 import javafx.scene.image.ImageView
 import javafx.stage.StageStyle
 
-authStage = application(title: 'GimnasioAplicacion', sizeToScene: true, centerOnScreen: true, resizable: false,onCloseRequest:controller.salir) {
+authStage = application(title: 'BodyCareFitness', sizeToScene: true, centerOnScreen: true, resizable: false,onCloseRequest:controller.salir) {
     scene(id: "authScene", fill: "#4169e1", width: 344.0, height: 207.0) {
         anchorPane(prefHeight: 187.0, prefWidth: 344.0) {
             text(text: "Bienvenido", font: "24", textFill = "radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 100.0px 100.0px, radius 200.0px, 0xff0000ff 0.0%, 0x0000ffff 30.0%, 0x000000ff 100.0%)", leftAnchor: 14.0, topAnchor: 19.0) {

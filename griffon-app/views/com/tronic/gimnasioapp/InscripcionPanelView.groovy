@@ -44,7 +44,7 @@ anchorPane(id: "inscripcionPantalla", prefHeight: 510.0, prefWidth: 800.0, botto
                 textField(id: "emailField", editable: false, prefWidth: 140.0)
                 label(id: "avisoEmail", graphic: new ImageView(model.caution), visible: bind(model.emailAvisoVIsibleProperty))
             }
-            label(id: "avisoGeneralDatos", layoutY: 308.0, prefWidth: 137.0, leftAnchor: 101.0, rightAnchor: 47.0, text: 'debe llenar correctamente los campos requeridos', visible: bind(model.avisoGeneralProperty))
+            label(id: "avisoGeneralDatos", layoutY: 308.0, textFill: 'red', prefWidth: 137.0, leftAnchor: 60.0, rightAnchor: 47.0, text: 'debe llenar correctamente los campos requeridos', opacity:0.0)
         }
     }
     titledPane(animated: false, collapsible: false, prefHeight: 356.0000999999975, prefWidth: 343.0, text: "Inscripciones Adicionales", rightAnchor: 133.0, topAnchor: 14.0) {
@@ -52,29 +52,31 @@ anchorPane(id: "inscripcionPantalla", prefHeight: 510.0, prefWidth: 800.0, botto
             tableView(id: "inscripcionesTabla", layoutX: 14.0, layoutY: 14.0, prefHeight: 259.0, prefWidth: 313.0) {
                 inscripcionesTabla.setItems(model.clasesItems)
                 tableColumn(maxWidth: 90.0, prefWidth: 90.0, text: "Nombre", property: 'nombre')
+                tableColumn(maxWidth: 90.0, prefWidth: 90.0, text: "Mensualidad", property: 'mensualidad')
                 tableColumn(maxWidth: 90.0, prefWidth: 90.0, text: "Dia", property: 'dia')
                 tableColumn(maxWidth: 90.0, prefWidth: 90.0, text: "Horario", property: 'desde')
                 tableColumn(maxWidth: 90.0, prefWidth: 90.0, text: "Instructor", property: 'instructor')
+
             }
-            button(id: "aceptarInscripcion", layoutX: 96.0, layoutY: 294.0, mnemonicParsing: false, text: "Agregar", onAction: controller.agregarNewActivity)
-            button(id: "cancelarInscripcion", layoutX: 172.0, layoutY: 294.0, mnemonicParsing: false, text: "Quitar", onAction: controller.quitarNewActivity)
+            button(id: "aceptarInscripcion", layoutX: 96.0, layoutY: 294.0,disable:bind(model.botonesClaseProperty), mnemonicParsing: false, text: "Agregar", onAction: controller.agregarNewActivity)
+            button(id: "cancelarInscripcion", layoutX: 172.0, layoutY: 294.0,disable:bind(model.botonesClaseProperty), mnemonicParsing: false, text: "Quitar", onAction: controller.quitarNewActivity)
         }
     }
     titledPane(animated: false, layoutX: 18.0, layoutY: 379.0, prefHeight: 117.0, prefWidth: 359.0, text: "Cuenta") {
         anchorPane(minHeight: 0.0, minWidth: 0.0, prefHeight: 180.0, prefWidth: 200.0) {
             label(layoutX: 223.0, layoutY: 14.0, text: "Status")
-            textField(editable: false, layoutX: 256.0, layoutY: 11.0, prefWidth: 95.0)
+            textField(id:'statusField',editable: false, layoutX: 256.0, layoutY: 11.0, prefWidth: 95.0)
             label(layoutX: 12.0, layoutY: 50.0, text: "Saldo")
-            textField(editable: false, layoutX: 49.0, layoutY: 47.0, prefWidth: 120.0)
+            textField(id:'saldoField',editable: false, layoutX: 49.0, layoutY: 47.0, prefWidth: 120.0)
             label(layoutX: 12.0, layoutY: 14.0, text: "Fecha ingreso")
-            textField(editable: false, layoutX: 89.0, layoutY: 11.0, prefWidth: 127.0)
-            button(layoutX: 178.0, layoutY: 48.0, mnemonicParsing: false, text: "Pagar",visible:bind(model.pagarVisibleProperty))
+            textField(id:'fechaIngresoField',editable: false, layoutX: 89.0, layoutY: 11.0, prefWidth: 127.0)
+            button(layoutX: 178.0, layoutY: 48.0, mnemonicParsing: false, text: "Pagar",visible:bind(model.pagarVisibleProperty),onAction:controller.pagar)
         }
     }
     hbox(alignment: "CENTER", layoutX: 533.0, layoutY: 475.0, spacing: 5.0) {
         button(defaultButton: true, text: "_Inscribir", onAction: controller.inscribir,visible:bind(model.inscribirVisibleProperty))
         button(text: "_Modificar", onAction: controller.modificar,visible:bind(model.modificarVisibleProperty))
-        button(text: '_Retirar', onAction: controller.retirar,visible:bind(model.retirarVisibleProperty))
+       // button(text: '_Retirar', onAction: controller.retirar,visible:bind(model.retirarVisibleProperty))
         button(cancelButton: true, text: "_Salir", onAction: controller.cerrar)
     }
     hbox(alignment: "CENTER", layoutX: 386.0, layoutY: 475.0, spacing: 5.0,visible:bind(model.aceptarCancelarProperty)) {
@@ -84,3 +86,5 @@ anchorPane(id: "inscripcionPantalla", prefHeight: 510.0, prefWidth: 800.0, botto
 }
 tran = translateTransition(node: inscripcionPantalla, duration: 500.ms, fromX: -800, toX: 0.0, autoReverse: true).play()
 tran2 = translateTransition(node: inscripcionPantalla, duration: 500.ms, fromX: 0.0, toX: -800.0, autoReverse: true)
+fadein = fadeTransition(5000.ms, node: avisoGeneralDatos, from: 0.0, to: 1.0)
+fadein2 = fadeTransition(5000.ms, node: avisoGeneralDatos, from: 1.0, to: 0.0)

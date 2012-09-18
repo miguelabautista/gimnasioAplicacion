@@ -9,6 +9,13 @@ application {
     //frameClass = 'javax.swing.JFrame'
 }
 mvcGroups {
+    // MVC Group for "pagarPanel"
+    'pagarPanel' {
+        model      = 'com.tronic.gimnasioapp.PagarPanelModel'
+        view       = 'com.tronic.gimnasioapp.PagarPanelView'
+        controller = 'com.tronic.gimnasioapp.PagarPanelController'
+    }
+
     // MVC Group for "instructoresPanel"
     'instructoresPanel' {
         model      = 'com.tronic.gimnasioapp.InstructoresPanelModel'

@@ -20,4 +20,5 @@ class Clientes {
     String direccion
     String telefFijo
     String telefMovil
+    def mensualidad
 }

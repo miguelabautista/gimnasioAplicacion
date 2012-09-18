@@ -66,6 +66,9 @@ class PanelPrincipalController {
                 app.event('closeActividades')
             }
         } catch (Exception e) {}
+        view.inscribirButton.disable = true
+        view.actividadesButton.disable = true
+
         def pantalla = mvc.view.clientesPane
         execInsideUIAsync {
             view.grupoDespliegue.getChildren().add(pantalla)
