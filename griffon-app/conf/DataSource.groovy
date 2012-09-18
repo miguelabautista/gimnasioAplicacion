@@ -2,7 +2,7 @@ dataSource {
     driverClassName = 'com.mysql.jdbc.Driver'
     username = 'root'
     password = 'filan3001'
-    tokenizeddl = false // set this to true if using MySQL or any other
+    tokenizeddl = true // set this to true if using MySQL or any other
     // RDBMS that requires execution of DDL statements
     // on separate calls
     pool {

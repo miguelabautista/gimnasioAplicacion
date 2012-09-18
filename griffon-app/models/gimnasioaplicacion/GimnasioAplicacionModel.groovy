@@ -6,14 +6,13 @@ import javafx.scene.image.ImageView
 
 class GimnasioAplicacionModel {
     @FXBindable String resultado
-    @FXBindable String user = "user"
+    @FXBindable String user
     @FXBindable boolean avisoUserVisible
     @FXBindable String tooltipUser
-    @FXBindable String password = '123'
+    @FXBindable String password
     @FXBindable boolean avisoPasswordVisible
     @FXBindable String tooltipPassword
 
     Image avisoImage = new Image(getClass().getResourceAsStream("/caution_biohazard.png"))
-
 
 }

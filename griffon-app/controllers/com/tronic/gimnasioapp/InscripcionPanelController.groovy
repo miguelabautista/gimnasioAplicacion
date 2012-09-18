@@ -319,8 +319,18 @@ class InscripcionPanelController {
             } else if ((telefonoMovil ==~ /0\d{3}\d{7}/) == false) {
                 view.telefonoMovilField.style = "-fx-background-color:#2343f4"
                 model.telfMovilAvisoVIsible = true
+            } else if (telefonoFijo.size() > 0) {
+                if ((telefonoFijo ==~ /0\d{3}\d{7}/) == false) {
+                    view.telefonoFijoField.style = "-fx-background-color:#2343f4"
+                    model.telfFijoAvisoVIsible = true
+                }
+            }else if(email.size() > 0){
+                if ((email ==~ /^[_a-z-A-Z0-9-]+(\.[_a-z-A-Z-0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/) == false) {
+                    view.emailField.style = '-fx-background-color:#2343f4'
+                    model.emailAvisoVIsible = true
+                }
             } else {
-
+                println "inscribe"
                 //cedula = f.parse(view.cedulaField.text).toString()
 
                 def valor = inscripcionService.corroborarCedula(cedula)
@@ -447,6 +457,16 @@ class InscripcionPanelController {
             } else if ((telefonoMovil ==~ /0\d{3}\d{7}/) == false) {
                 view.telefonoMovilField.style = "-fx-background-color:#2343f4"
                 model.telfMovilAvisoVIsible = true
+            } else if (telefonoFijo.size() > 0) {
+                if ((telefonoFijo ==~ /0\d{3}\d{7}/) == false) {
+                    view.telefonoFijoField.style = "-fx-background-color:#2343f4"
+                    model.telfFijoAvisoVIsible = true
+                }
+            }else if(email.size() > 0){
+                if ((email ==~ /^[_a-z-A-Z0-9-]+(\.[_a-z-A-Z-0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/) == false) {
+                    view.emailField.style = '-fx-background-color:#2343f4'
+                    model.emailAvisoVIsible = true
+                }
             } else {
 
                 def mensual = 0
